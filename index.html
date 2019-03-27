@@ -65,6 +65,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Django开发学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/27/Django开发学习/" class="article-date">
+  <time datetime="2019-03-27T12:19:50.000Z" itemprop="datePublished">2019-03-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Django/">Django</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/27/Django开发学习/">Django 开发学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、Django-框架详解"><a href="#一、Django-框架详解" class="headerlink" title="一、Django 框架详解"></a>一、Django 框架详解</h2><h3 id="目录结构及各个文件的作用"><a href="#目录结构及各个文件的作用" class="headerlink" title="目录结构及各个文件的作用"></a>目录结构及各个文件的作用</h3><h4 id="Django-工程初始结构"><a href="#Django-工程初始结构" class="headerlink" title="Django 工程初始结构"></a>Django 工程初始结构</h4><ul>
+<li><strong>manage.py</strong>：一个让你用各种方式管理 Django 项目的命令行工具。你可以阅读 django-admin and manage.py 获取所有 manage.py 的细节。</li>
+<li>里面一层的 HiDjango/ 目录包含你的项目，它是一个纯 Python 包。它的名字就是当你引用它内部任何东西时需要用到的 Python 包名。 (比如 mysite.urls).</li>
+<li><strong>HiDjango/<strong>init</strong>.py</strong>：一个空文件，告诉 Python 这个目录应该被认为是一个 Python 包。如果你是 Python 初学者，阅读官方文档中的 <a href="https://docs.python.org/3/tutorial/modules.html#tut-packages" target="_blank" rel="noopener">更多关于包的知识</a></li>
+<li><strong>HiDjango/settings.py</strong>：Django 项目的配置文件。如果你想知道这个文件是如何工作的，请查看 <a href="https://docs.djangoproject.com/zh-hans/2.1/topics/settings/" target="_blank" rel="noopener">Django settings</a> 了解细节</li>
+<li><strong>HiDjango/urls.py</strong>：jango 项目的 URL 声明，就像你网站的“目录”。阅读 <a href="https://docs.djangoproject.com/zh-hans/2.1/topics/http/urls/" target="_blank" rel="noopener">URL调度器</a> 文档来获取更多关于 URL 的内容。</li>
+<li><strong>HiDjango/wsgi.py</strong>：作为你的项目的运行在 WSGI 兼容的Web服务器上的入口。阅读 如何<a href="https://docs.djangoproject.com/zh-hans/2.1/howto/deployment/wsgi/" target="_blank" rel="noopener">使用 WSGI 进行部署</a> 了解更多细节。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HiDjango/</span><br><span class="line">├── HiDjango</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── settings.py</span><br><span class="line">│   ├── urls.py</span><br><span class="line">│   └── wsgi.py</span><br><span class="line">└── manage.py</span><br></pre></td></tr></table></figure>
+<h4 id="Django-App-目录结构"><a href="#Django-App-目录结构" class="headerlink" title="Django App 目录结构"></a>Django App 目录结构</h4><p>执行命令创建一个 app</p>
+<p><code>python manage.py startapp djangoApp</code></p>
+<p>创建好 app 的 django 目录结构如下：<br>我们可以通过目录结构，看到 django 框架 的 MTV 模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">HiDjango/</span><br><span class="line">├── djangoApp</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── admin.py</span><br><span class="line">│   ├── apps.py</span><br><span class="line">│   ├── migrations</span><br><span class="line">│   │   └── __init__.py</span><br><span class="line">│   ├── models.py</span><br><span class="line">│   ├── tests.py</span><br><span class="line">│   └── views.py</span><br><span class="line">├── HiDjango</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── __pycache__</span><br><span class="line">│   │   ├── __init__.cpython-37.pyc</span><br><span class="line">│   │   └── settings.cpython-37.pyc</span><br><span class="line">│   ├── settings.py</span><br><span class="line">│   ├── urls.py</span><br><span class="line">│   └── wsgi.py</span><br><span class="line">└── manage.py</span><br></pre></td></tr></table></figure>
+<h3 id="请求与响应"><a href="#请求与响应" class="headerlink" title="请求与响应"></a>请求与响应</h3><p>####</p>
+<h4 id="1-2-1-views"><a href="#1-2-1-views" class="headerlink" title="1.2.1 views"></a>1.2.1 views</h4><h4 id="1-2-2-urls"><a href="#1-2-2-urls" class="headerlink" title="1.2.2 urls"></a>1.2.2 urls</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/27/Django开发学习/" data-id="cjtr6h3rb0000ez9tezypnl31" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="source/_posts-django入门" class="article article-type-source/_posts" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/25/django入门/" class="article-date">
@@ -116,16 +170,16 @@
 <p>安装完成后，我们通过查看版本，检测是否安装成功</p>
 <p><code>python3 -m django --version</code></p>
 <p>我们可以通过命令行来创建一个 Django 工程</p>
-<p><code>django-admin.py startproject djangoDemo</code></p>
+<p><code>django-admin.py startproject HiDjango</code></p>
 <p>我们可以通过 tree 命令，看一下 Django 工程的目录结构</p>
-<p><code>tree djangoDemo</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">djangoDemo/</span><br><span class="line">├── djangoDemo</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── settings.py</span><br><span class="line">│   ├── urls.py</span><br><span class="line">│   └── wsgi.py</span><br><span class="line">└── manage.py</span><br></pre></td></tr></table></figure>
+<p><code>tree</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HiDjango/</span><br><span class="line">├── HiDjango</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── settings.py</span><br><span class="line">│   ├── urls.py</span><br><span class="line">│   └── wsgi.py</span><br><span class="line">└── manage.py</span><br></pre></td></tr></table></figure>
 <p>mac 上默认没有 tree 命令，执行 <code>brew install tree</code> 安装</p>
 <p>后续章节详细介绍目录结构以及各个文件的意义，本章节我们先专注快速开始</p>
 <h3 id="2-2、创建-Django-App"><a href="#2-2、创建-Django-App" class="headerlink" title="2.2、创建 Django App"></a>2.2、创建 Django App</h3><h4 id="2-2-1-创建-App"><a href="#2-2-1-创建-App" class="headerlink" title="2.2.1 创建 App"></a>2.2.1 创建 App</h4><p>在 DjangoDemo 工程目录下，执行命令，创建一个 Django App</p>
 <p><code>python3 manage.py startapp ajangoApp</code></p>
 <p>我们再来 tree 一下目录，<code>tree djangoDemo</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">djangoDemo/</span><br><span class="line">├── ajangoApp</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── admin.py</span><br><span class="line">│   ├── apps.py</span><br><span class="line">│   ├── migrations</span><br><span class="line">│   │   └── __init__.py</span><br><span class="line">│   ├── models.py</span><br><span class="line">│   ├── tests.py</span><br><span class="line">│   └── views.py</span><br><span class="line">├── djangoDemo</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── __pycache__</span><br><span class="line">│   │   ├── __init__.cpython-37.pyc</span><br><span class="line">│   │   └── settings.cpython-37.pyc</span><br><span class="line">│   ├── settings.py</span><br><span class="line">│   ├── urls.py</span><br><span class="line">│   └── wsgi.py</span><br><span class="line">└── manage.py</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">HiDjango/</span><br><span class="line">├── ajangoApp</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── admin.py</span><br><span class="line">│   ├── apps.py</span><br><span class="line">│   ├── migrations</span><br><span class="line">│   │   └── __init__.py</span><br><span class="line">│   ├── models.py</span><br><span class="line">│   ├── tests.py</span><br><span class="line">│   └── views.py</span><br><span class="line">├── HiDjango</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── __pycache__</span><br><span class="line">│   │   ├── __init__.cpython-37.pyc</span><br><span class="line">│   │   └── settings.cpython-37.pyc</span><br><span class="line">│   ├── settings.py</span><br><span class="line">│   ├── urls.py</span><br><span class="line">│   └── wsgi.py</span><br><span class="line">└── manage.py</span><br></pre></td></tr></table></figure>
 <h4 id="2-2-2-App-目录结构"><a href="#2-2-2-App-目录结构" class="headerlink" title="2.2.2 App 目录结构"></a>2.2.2 App 目录结构</h4><p>【admin.py】：对应应用后台管理配置文件</p>
 <p>【papps.py]：对应应用的配置文件</p>
 <p>【models.py】：数据模块，用于设计数据库等</p>
@@ -153,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/25/django入门/" data-id="cjtnpt2xh00012h9tiz5o7mhl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/25/django入门/" data-id="cjtr6h3rf0001ez9tg4ckcfym" class="article-share-link">Share</a>
       
       
     </footer>
@@ -225,7 +279,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/18/app/" data-id="cjtnpt2xd00002h9tjhe2owks" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/18/app/" data-id="cjtr6h3rs0006ez9tqoq3rrrt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xcode/">Xcode</a></li></ul>
@@ -264,7 +318,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/17/个人博客/" data-id="cjtnpt2xk00042h9t92qf0hty" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/17/个人博客/" data-id="cjtr6h3rt0007ez9t58i9j7yw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -324,6 +378,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/03/27/Django开发学习/">Django 开发学习</a>
+          </li>
         
           <li>
             <a href="/2019/03/25/django入门/">Django 入门</a>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Django 开发学习 | 魏晓堃</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、Django 框架详解目录结构及各个文件的作用Django 工程初始结构 manage.py：一个让你用各种方式管理 Django 项目的命令行工具。你可以阅读 django-admin and manage.py 获取所有 manage.py 的细节。 里面一层的 HiDjango/ 目录包含你的项目，它是一个纯 Python 包。它的名字就是当你引用它内部任何东西时需要用到的 Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django 开发学习">
+<meta property="og:url" content="http://yoursite.com/2019/03/27/Django开发学习/index.html">
+<meta property="og:site_name" content="魏晓堃">
+<meta property="og:description" content="一、Django 框架详解目录结构及各个文件的作用Django 工程初始结构 manage.py：一个让你用各种方式管理 Django 项目的命令行工具。你可以阅读 django-admin and manage.py 获取所有 manage.py 的细节。 里面一层的 HiDjango/ 目录包含你的项目，它是一个纯 Python 包。它的名字就是当你引用它内部任何东西时需要用到的 Python">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-27T13:05:24.685Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django 开发学习">
+<meta name="twitter:description" content="一、Django 框架详解目录结构及各个文件的作用Django 工程初始结构 manage.py：一个让你用各种方式管理 Django 项目的命令行工具。你可以阅读 django-admin and manage.py 获取所有 manage.py 的细节。 里面一层的 HiDjango/ 目录包含你的项目，它是一个纯 Python 包。它的名字就是当你引用它内部任何东西时需要用到的 Python">
+  
+    <link rel="alternate" href="/atom.xml" title="魏晓堃" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">魏晓堃</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Django开发学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/27/Django开发学习/" class="article-date">
+  <time datetime="2019-03-27T12:19:50.000Z" itemprop="datePublished">2019-03-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Django/">Django</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Django 开发学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、Django-框架详解"><a href="#一、Django-框架详解" class="headerlink" title="一、Django 框架详解"></a>一、Django 框架详解</h2><h3 id="目录结构及各个文件的作用"><a href="#目录结构及各个文件的作用" class="headerlink" title="目录结构及各个文件的作用"></a>目录结构及各个文件的作用</h3><h4 id="Django-工程初始结构"><a href="#Django-工程初始结构" class="headerlink" title="Django 工程初始结构"></a>Django 工程初始结构</h4><ul>
+<li><strong>manage.py</strong>：一个让你用各种方式管理 Django 项目的命令行工具。你可以阅读 django-admin and manage.py 获取所有 manage.py 的细节。</li>
+<li>里面一层的 HiDjango/ 目录包含你的项目，它是一个纯 Python 包。它的名字就是当你引用它内部任何东西时需要用到的 Python 包名。 (比如 mysite.urls).</li>
+<li><strong>HiDjango/<strong>init</strong>.py</strong>：一个空文件，告诉 Python 这个目录应该被认为是一个 Python 包。如果你是 Python 初学者，阅读官方文档中的 <a href="https://docs.python.org/3/tutorial/modules.html#tut-packages" target="_blank" rel="noopener">更多关于包的知识</a></li>
+<li><strong>HiDjango/settings.py</strong>：Django 项目的配置文件。如果你想知道这个文件是如何工作的，请查看 <a href="https://docs.djangoproject.com/zh-hans/2.1/topics/settings/" target="_blank" rel="noopener">Django settings</a> 了解细节</li>
+<li><strong>HiDjango/urls.py</strong>：jango 项目的 URL 声明，就像你网站的“目录”。阅读 <a href="https://docs.djangoproject.com/zh-hans/2.1/topics/http/urls/" target="_blank" rel="noopener">URL调度器</a> 文档来获取更多关于 URL 的内容。</li>
+<li><strong>HiDjango/wsgi.py</strong>：作为你的项目的运行在 WSGI 兼容的Web服务器上的入口。阅读 如何<a href="https://docs.djangoproject.com/zh-hans/2.1/howto/deployment/wsgi/" target="_blank" rel="noopener">使用 WSGI 进行部署</a> 了解更多细节。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HiDjango/</span><br><span class="line">├── HiDjango</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── settings.py</span><br><span class="line">│   ├── urls.py</span><br><span class="line">│   └── wsgi.py</span><br><span class="line">└── manage.py</span><br></pre></td></tr></table></figure>
+<h4 id="Django-App-目录结构"><a href="#Django-App-目录结构" class="headerlink" title="Django App 目录结构"></a>Django App 目录结构</h4><p>执行命令创建一个 app</p>
+<p><code>python manage.py startapp djangoApp</code></p>
+<p>创建好 app 的 django 目录结构如下：<br>我们可以通过目录结构，看到 django 框架 的 MTV 模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">HiDjango/</span><br><span class="line">├── djangoApp</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── admin.py</span><br><span class="line">│   ├── apps.py</span><br><span class="line">│   ├── migrations</span><br><span class="line">│   │   └── __init__.py</span><br><span class="line">│   ├── models.py</span><br><span class="line">│   ├── tests.py</span><br><span class="line">│   └── views.py</span><br><span class="line">├── HiDjango</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── __pycache__</span><br><span class="line">│   │   ├── __init__.cpython-37.pyc</span><br><span class="line">│   │   └── settings.cpython-37.pyc</span><br><span class="line">│   ├── settings.py</span><br><span class="line">│   ├── urls.py</span><br><span class="line">│   └── wsgi.py</span><br><span class="line">└── manage.py</span><br></pre></td></tr></table></figure>
+<h3 id="请求与响应"><a href="#请求与响应" class="headerlink" title="请求与响应"></a>请求与响应</h3><p>####</p>
+<h4 id="1-2-1-views"><a href="#1-2-1-views" class="headerlink" title="1.2.1 views"></a>1.2.1 views</h4><h4 id="1-2-2-urls"><a href="#1-2-2-urls" class="headerlink" title="1.2.2 urls"></a>1.2.2 urls</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/27/Django开发学习/" data-id="cjtr6h3rb0000ez9tezypnl31" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/25/django入门/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Django 入门</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Django/">Django</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS-相关/">iOS 相关</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/27/Django开发学习/">Django 开发学习</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/25/django入门/">Django 入门</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/18/app/">记一次 “Could not launch” 错误</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/17/个人博客/">魏晓堃个人博客</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 魏晓堃<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
