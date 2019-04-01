@@ -195,7 +195,208 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <h2 id="Web-前端技术概览"><a href="#Web-前端技术概览" class="headerlink" title="Web 前端技术概览"></a>Web 前端技术概览</h2><p>  由于在项目中需要用到 Web 前端的相关知识，自己对这一块恰好又是有些了解但从未系统的去学习过，于是写一篇文章来记录</p>
+      <h2 id="Web-前端技术概览"><a href="#Web-前端技术概览" class="headerlink" title="Web 前端技术概览"></a>Web 前端技术概览</h2><p>  由于在项目中需要用到 Web 前端的相关知识，自己对这一块恰好又是有些了解但从未系统的去学习过，于是写一篇文章来记录，一般来说，一个前端工程师需要掌握的基础技能有：</p>
+<ol>
+<li>HTML </li>
+<li>CSS</li>
+<li>Javascipt</li>
+</ol>
+<p>这三个知识点是前端工程师需要掌握的最基础的技能，当我们不考虑开发速度，不考虑效果等等，理论上，只有掌握了这三个点，就完全可以开发出任意网页.</p>
+<p>当然，已经 9102 年了，已经很少有人再利用原始的 html/css/js 来做 Web 前端开发了，通常会借助一些成功的框架帮助web 开发，例如： </p>
+<ol>
+<li>jQuery</li>
+<li>Angular</li>
+<li>React </li>
+<li>Vue</li>
+</ol>
+<p>本文将从 html/css/javascript 讲起，但不会做过多的赘述，用最快的速度精简的路径直通主流框架，进击实战。</p>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="什么是-HTML"><a href="#什么是-HTML" class="headerlink" title="什么是 HTML"></a>什么是 HTML</h3><p>HTML 是用来描述网页的一种语言。</p>
+<ul>
+<li>HTML 指的是超文本标记语言 (Hyper Text Markup Language)</li>
+<li>HTML 不是一种编程语言，而是一种标记语言 (markup language)</li>
+<li>标记语言是一套标记标签 (markup tag)</li>
+<li>HTML 使用标记标签来描述网页</li>
+</ul>
+<h3 id="编译工具（IDE）"><a href="#编译工具（IDE）" class="headerlink" title="编译工具（IDE）"></a>编译工具（IDE）</h3><p>用来编写前端的 IDE 十分简便，入门阶段，我们用 Macdown，Sublime Text3，甚至说是记事本，都可以用来编写 HTML。</p>
+<h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h3><p>好了，废话不多说，直接上代码，学习任何一门语言或框架都是从 hello world 开始的，这是一个夹杂着程序员专有浪漫的美丽启程。</p>
+<p>好了，我们进入一个目录，创建一个 HiWeb 目录并进入，再创建一个 Hello.html 文件, 利用 IDE 或文本编辑器打开。<br>编写如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt; 我的第一个标题 &lt;/h1&gt;</span><br><span class="line">&lt;p&gt; Hello World! &lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>例子解释：</p>
+<ul>
+<li><code>&lt;html&gt; 与 &lt;/html&gt; 之间文本描述网页</code></li>
+<li><code>&lt;body&gt; 与 &lt;/body&gt; 之间的文本用来显示可见内容</code></li>
+<li><code>&lt;h1&gt; 与 &lt;/h1&gt; 之间的文本一级标题</code></li>
+<li><code>&lt;p&gt; 与 &lt;/p&gt; 之间文本显示段位</code></li>
+</ul>
+<h3 id="基础标签"><a href="#基础标签" class="headerlink" title="基础标签"></a>基础标签</h3><p>标题标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;一级标题&lt;/h1&gt;</span><br><span class="line">&lt;h2&gt;二级标题&lt;/h2&gt;</span><br><span class="line">&lt;h3&gt;三级标题&lt;/h3&gt;</span><br><span class="line">&lt;h4&gt;四级标题&lt;/h4&gt;</span><br></pre></td></tr></table></figure>
+<p>注释</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 注释的标签是这样玩的 --&gt;</span><br></pre></td></tr></table></figure>
+<p>段落注释</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- </span><br><span class="line"></span><br><span class="line">&lt;p&gt;段落注释&lt;/p</span><br><span class="line"></span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure>
+<p>分割线标签</p>
+<p><code>&lt;hr /&gt;</code></p>
+<p>折行标签</p>
+<p><code>&lt;br /&gt;</code></p>
+<p>段落标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;这是一个段落&lt;/p&gt;</span><br><span class="line">&lt;p&gt;这是另一个段落&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p>a标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;https://www.taobao.com&quot;&gt; 这是一个链接标签 &lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p>图片标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;./resource/photo/onepiece.jpg&quot; width=&quot;200&quot; height=&quot;200&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>注：图片标签的宽高，均是用属性的形式进行设置</p>
+<h3 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h3><p>所有从开始标签到结束标签的代码，都是元素</p>
+<p><code>&lt;p&gt; 元素：标签从开始到结束的所有代码 ，元素可以嵌套&lt;/p&gt;</code></p>
+<p>元素语法</p>
+<ul>
+<li>HTML 元素以开始标签起始</li>
+<li>HTML 元素以结束标签结束</li>
+<li>元素的内容是开始标签到结束标签的所有内容</li>
+<li>有些 HTML 元素具有空内容</li>
+<li>空元素可以在开始标签中关闭</li>
+<li>大多数 HTML 标签可拥有属性</li>
+</ul>
+<p>元素使用注意事项</p>
+<ol>
+<li>不要忘记结束标签</li>
+<li>空标签的结束标签是在开始标签后加斜杠，例如换行标签 <code>&lt;br /&gt;</code></li>
+<li>标签小写规范，理论上标签不会敏感大小写，但 W3C 推送使用小写</li>
+</ol>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>a 标签中的 href 就是属性</p>
+<p><code>&lt;a href=&quot;http://www.w3school.com.cn&quot;&gt;This is a link&lt;/a&gt;</code></p>
+<p>属性的实例</p>
+<p><code>&lt;h1 align=&quot;center&quot;&gt; 使用居中属性 &lt;/h1&gt;</code></p>
+<p>属性使用注意事项</p>
+<ol>
+<li>属性和属性值同样是不敏感大小写的，但 W3C 推荐使用小写</li>
+</ol>
+<p>参考手册</p>
+<p><a href="http://www.w3school.com.cn/tags/index.asp" target="_blank" rel="noopener">完整的 HTML 参考手册</a></p>
+<p><a href="http://www.w3school.com.cn/tags/index.asp" target="_blank" rel="noopener">HTML 全局属性手册</a></p>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><p>HTML 提供了一种改变元素样式的属性，style，例如我们想要改变元素的背景颜色，我们可以这样</p>
+<p><code>&lt;p style=&quot;background: yellow;&quot; &gt; 这是一个有待改变的段落&lt;/p&gt;</code></p>
+<p><a href="http://www.w3school.com.cn/css/index.asp" target="_blank" rel="noopener">CSS教程</a> 中包括了样式的全部用法</p>
+<p>避免使用废弃的标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;center&gt;</span><br><span class="line">&lt;font&gt; 和 &lt;basefont&gt;</span><br><span class="line">&lt;s&gt; 和 &lt;strike&gt;</span><br><span class="line">&lt;u&gt;</span><br></pre></td></tr></table></figure>
+<p>避免使用废弃的属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">align</span><br><span class="line">bgcolor</span><br><span class="line">color</span><br></pre></td></tr></table></figure></p>
+<p>实例1：改变背景色</p>
+<p><code>&lt;p style=&quot;background: yellow;&quot; &gt; 这是一个有待改变的段落&lt;/p&gt;</code></p>
+<p>实例2：改变字体及颜色</p>
+<p><code>&lt;p style=&quot;font-size: 30;color: cyan&quot;&gt; 这是一个要改变字体颜色大小的段落&lt;/p&gt;</code></p>
+<p>实例3：改变字体对齐</p>
+<p><code>&lt;p style=&quot;text-align: center;&quot;&gt; 这是一个要被对齐段落&lt;/p&gt;</code></p>
+<h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><p>格式化不想做过多的赘述，可以参考<a href="http://www.w3school.com.cn/html/html_formatting.asp" target="_blank" rel="noopener">格式化</a></p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p><code>&lt;p&gt;我们通过 q 标签可以：&lt;q&gt;为一段问题加入引号 &lt;br /&gt; 换行好像也行&lt;/q&gt;&lt;/p&gt;</code></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>利用 code 标签，可以满足代码格式的示例展示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;code&gt;</span><br><span class="line">	var person = &#123;</span><br><span class="line">	   name = &quot;索隆&quot;,</span><br><span class="line">	   profession = “剑客”,</span><br><span class="line">	   aims = “世界第一的大剑豪”</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/code&gt;</span><br></pre></td></tr></table></figure>
+<p>但是，展示出来会发现，这并不是我们要的现象，并不会展示出代码的格式，于是我们要利用 pre 标签，定义预格式文本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;code&gt;</span><br><span class="line">&lt;pre&gt;</span><br><span class="line">var person = &#123;</span><br><span class="line">	name = &quot;索隆&quot;,</span><br><span class="line">	profession = “剑客”,</span><br><span class="line">	aims = “世界第一的大剑豪”</span><br><span class="line">&#125;</span><br><span class="line">&lt;/pre&gt;</span><br><span class="line">&lt;/code&gt;</span><br></pre></td></tr></table></figure>
+<p>利用 samp 元素定义计算机输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;samp&gt;</span><br><span class="line">demo.example.com login: Apr 12 09:10:17</span><br><span class="line">Linux 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189</span><br><span class="line">&lt;/samp&gt;</span><br></pre></td></tr></table></figure>
+<p>当然，如果想实现换行的格式，利用 pre 就可以了。</p>
+<p>HTML 还提供了 var 标签来定义变量，可以用来展示数学公式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;HTML 还可以用来展示数学公式，很有意思!!&lt;/p&gt;</span><br><span class="line">&lt;p&gt;例如，爱因斯坦公示&lt;/p&gt;</span><br><span class="line">&lt;p&gt;&lt;var&gt;E&lt;/var&gt; = &lt;var&gt;m&lt;/var&gt; &lt;var&gt;c&lt;/var&gt; &lt;sup&gt;2&lt;/sup&gt;&lt;/s&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>无序列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li&gt;Coffee&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;Milk&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;Tea&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<p>有序列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">	&lt;li&gt;Coffee&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;Milk&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;Tea&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure>
+<p>定义列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dl&gt;</span><br><span class="line">	&lt;dt&gt;Coffee&lt;/dt&gt;</span><br><span class="line">	&lt;dd&gt;Black hot drink&lt;/dd&gt;</span><br><span class="line">	&lt;dt&gt;Milk&lt;/dt&gt;</span><br><span class="line">	&lt;dd&gt;White cold drink&lt;/dd&gt;</span><br><span class="line">&lt;/dl&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="块（div-和-span）"><a href="#块（div-和-span）" class="headerlink" title="块（div 和 span）"></a>块（div 和 span）</h3><p>前面学写了这么多，感觉终于算是步入正轨了。div 和 span 是 html 非常重要的一环，配合 class 和 id 的使用，对于编写动态页面以及 HTML 结构化都有着重要的作用。</p>
+<p><strong>div</strong></p>
+<p>我们可以把 div 就理解成一个块，HTML 会为 div 内置一个换行符号，在一个我们为一个块内定义的属性，在整个块内所有的元素都会生成，配合 class 和 id，在实际的 web 开发中，非常常用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;color: red&quot; class=&quot;news&quot; id=&quot;&quot;&gt;</span><br><span class="line">	&lt;h3&gt;这是一个标题&lt;/h3&gt;</span><br><span class="line">	&lt;p&gt;这是一个段落&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>span</strong></p>
+<p>span 通常用来定义和区分行内元素，和 div 一样，在实际 web 开发中，配合 class 和 id 的使用非常常用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p class=&quot;label&quot;&gt; 段落段落 &lt;span class=&quot;focus&quot;&gt;我们不一样～不一样～&lt;/span&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p>class 和 id 通常会用于获取 CSS 的样式，JS 的调用标识，具体使用，在 CSS 和 JS 全部讲完后，具体展示</p>
+<p>div 和 span 都支持 <a href="http://www.w3school.com.cn/tags/html_ref_standardattributes.asp" target="_blank" rel="noopener">全局属性</a> 和 <a href="http://www.w3school.com.cn/tags/html_ref_eventattributes.asp" target="_blank" rel="noopener">事件属性</a></p>
+<p><strong>class与CSS的示例</strong><br>利用莎士比亚的《短诗十八行》，展示下如何利用 class 获取组合样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;title&gt;I have a dream&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">	&lt;style&gt;</span><br><span class="line">	.label &#123;</span><br><span class="line">    background-color: gray;</span><br><span class="line">    color:white;</span><br><span class="line">    margin:20px;</span><br><span class="line">    padding:20px;</span><br><span class="line">	&#125; </span><br><span class="line"></span><br><span class="line">	.subTitle &#123;</span><br><span class="line">		align: right;</span><br><span class="line">		color: yellow;</span><br><span class="line">		font-size: 30;</span><br><span class="line">	&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;label&quot;&gt;</span><br><span class="line">	&lt;h2&gt; Sonnet 18 &lt;/h2&gt;	</span><br><span class="line">	&lt;p&gt;  BY &lt;span class=&quot;subTitle&quot;&gt;WILLIAM SHAKESPEARE&lt;/span&gt; &lt;/p&gt;</span><br><span class="line">	&lt;pre&gt;</span><br><span class="line">	&lt;p&gt;</span><br><span class="line">		Shall I compare thee to a summer’s day?</span><br><span class="line">		Thou art more lovely and more temperate:</span><br><span class="line">		Rough winds do shake the darling buds of May,</span><br><span class="line">		And summer’s lease hath all too short a date;</span><br><span class="line">		Sometime too hot the eye of heaven shines,</span><br><span class="line">		And often is his gold complexion dimm&apos;d;</span><br><span class="line">		And every fair from fair sometime declines,</span><br><span class="line">		By chance or nature’s changing course untrimm&apos;d;</span><br><span class="line">		But thy eternal summer shall not fade,</span><br><span class="line">		Nor lose possession of that fair thou ow’st;</span><br><span class="line">		Nor shall death brag thou wander’st in his shade,</span><br><span class="line">		When in eternal lines to time thou grow’st:</span><br><span class="line">   		So long as men can breathe or eyes can see,</span><br><span class="line">   		So long lives this, and this gives life to thee.</span><br><span class="line">	&lt;/p&gt;</span><br><span class="line">	&lt;/pre&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="脚本-（Script）"><a href="#脚本-（Script）" class="headerlink" title="脚本 （Script）"></a>脚本 （Script）</h3><p>JavaScript 脚本将会使网页更加具有动态性和交互性，如下代码将会在浏览器输入 Hello World</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.write(&quot;Hello World!&quot;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="头部（Header）"><a href="#头部（Header）" class="headerlink" title="头部（Header）"></a>头部（Header）</h3><p>header 元素是所有头部元素的容器。header 内的元素包含脚本，指定样式表，提供元信息等<br>以下标签都可以添加到 head 部分：<code>&lt;title&gt;、&lt;base&gt;、&lt;link&gt;、&lt;meta&gt;、&lt;script&gt; 以及 &lt;style&gt;。</code></p>
+<p>通过一个简化的 HTML 文档，体现 header</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;title&gt;我是一个标题&lt;/title&gt;</span><br><span class="line">	&lt;base href=&quot;https://www.baidu.com&quot; /&gt;</span><br><span class="line">	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resource/css/xxxx.css&quot;&gt;</span><br><span class="line">	&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">		body &#123;</span><br><span class="line">			background-color: yellow</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">	&lt;meta charset=&quot;utf-8&quot; name=&quot;desciption&quot; content=&quot;这是一个数据页面&quot;&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;/xxxx/xxxx.js&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>以上的知识点，足够我们作为一个前端开发工程师的必备条件，但是仍有一些基础的知识点需要掌握</p>
+<ul>
+<li><a href="http://www.w3school.com.cn/html/html_entities.asp" target="_blank" rel="noopener">HTML字符实体</a></li>
+<li><a href="http://www.w3school.com.cn/html/html_url.asp" target="_blank" rel="noopener">URL</a></li>
+<li><a href="http://www.w3school.com.cn/html/html_urlencode.asp" target="_blank" rel="noopener">URL 编码</a></li>
+<li><a href="http://www.w3school.com.cn/html/html_colors.asp" target="_blank" rel="noopener">HTML 颜色</a></li>
+<li><a href="http://www.w3school.com.cn/html/html_colornames.asp" target="_blank" rel="noopener">HTML 颜色列表</a></li>
+<li><a href="http://www.w3school.com.cn/html/html_doctype.asp" target="_blank" rel="noopener">HTML 文档类型</a></li>
+<li><a href="http://www.w3school.com.cn/html/html_quick.asp" target="_blank" rel="noopener">HTML 速查手册</a></li>
+</ul>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p>之所以在学习完 html 后，直接跳入 JavaScript，是个人认为想快速进行 Web 开发，JavaScript 会比 CSS 更加需要优先掌握，而且在实际的开发过程，又会有很多的样式封装，例如 bootstrap 等，所以先行学习 JavaScript。</p>
+<p>但是 JavaScript 章节也不会停留太久，目前也很少有人用纯 JavaScript 进行 Web 开发，通常都会使用 jQuery 或 vue 框架，所以这个章节，对于有开发经验的人，可以快速的过一遍 JavaScript 的基础语法，然后直接进入 jQuery 的学习。</p>
+<p>对于没有开发经验同学，还是需要详细的学习下 <a href="http://www.w3school.com.cn/js/index.asp" target="_blank" rel="noopener">JavaScript</a></p>
+<h3 id="学习规划"><a href="#学习规划" class="headerlink" title="学习规划"></a>学习规划</h3><h4 id="重点，因为这些是和其他语言差距较大的部分"><a href="#重点，因为这些是和其他语言差距较大的部分" class="headerlink" title="重点，因为这些是和其他语言差距较大的部分"></a>重点，因为这些是和其他语言差距较大的部分</h4><ol>
+<li>语法</li>
+<li>变量</li>
+<li>数据类型</li>
+<li>对象</li>
+<li>函数</li>
+</ol>
+<h4 id="看一下就好，因为都差不多"><a href="#看一下就好，因为都差不多" class="headerlink" title="看一下就好，因为都差不多"></a>看一下就好，因为都差不多</h4><ol>
+<li>注释</li>
+<li>运算符/比较符号</li>
+<li>if…else/switch/</li>
+<li>for/while</li>
+<li>break/continue</li>
+</ol>
+<h4 id="重中之重"><a href="#重中之重" class="headerlink" title="重中之重"></a>重中之重</h4><ol>
+<li>事件响应</li>
+<li>捕捉 html 元素</li>
+<li>逐层捕捉 html </li>
+<li>改变/插入 html 元素</li>
+<li>网络请求</li>
+<li>jQuery 库</li>
+</ol>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>JavaScript 需要些分号<br>JavaScript 对大小写敏感。<br>用花括号区分代码块<br>空格用来提高可读性</p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>用 var 来标记变量</p>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>数字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var pi=3.14;</span><br></pre></td></tr></table></figure>
+<p>字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var name=&quot;Bill Gates&quot;;</span><br><span class="line">var answer=&apos;Yes I am!&apos;;</span><br></pre></td></tr></table></figure>
+<p>Bool</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var x = true;</span><br><span class="line">var y = false;</span><br></pre></td></tr></table></figure>
+<p>数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var cars = new Array();</span><br><span class="line">cars[0]=&quot;Audi&quot;;</span><br><span class="line">cars[1]=&quot;BMW&quot;;</span><br><span class="line">cars[2]=&quot;Volvo&quot;;</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">var cars=new Array(&quot;Audi&quot;,&quot;BMW&quot;,&quot;Volvo&quot;);</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line">var cars=[&quot;Audi&quot;,&quot;BMW&quot;,&quot;Volvo&quot;];</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">var cars=[];</span><br><span class="line">cars[0]=&quot;Audi&quot;;</span><br><span class="line">cars[1]=&quot;BMW&quot;;</span><br><span class="line">cars[2]=&quot;Volvo&quot;;</span><br></pre></td></tr></table></figure>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var person = &#123;</span><br><span class="line">	name : &apos;魏晓堃&apos;</span><br><span class="line">	age : 26</span><br><span class="line">	id : 88888888888</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var name = person.name;</span><br><span class="line">var age = age[&quot;age&quot;]</span><br></pre></td></tr></table></figure>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>无参无返回</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function myFun() &#123;</span><br><span class="line">	...</span><br><span class="line">	</span><br><span class="line">	code </span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有参无返回</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">funcation myFun(name, id) &#123;</span><br><span class="line">	...</span><br><span class="line">	code</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有参有返回</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">funcation myFun(name, id) &#123;</span><br><span class="line"></span><br><span class="line">	var value = ....</span><br><span class="line">	</span><br><span class="line">	...</span><br><span class="line">	code</span><br><span class="line">	...</span><br><span class="line">	</span><br><span class="line">	return value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><p>算数运算符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+</span><br><span class="line">-</span><br><span class="line">*</span><br><span class="line">/</span><br><span class="line">%</span><br><span class="line">++ </span><br><span class="line">--</span><br></pre></td></tr></table></figure>
+<p>赋值运算符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">=</span><br><span class="line">+=</span><br><span class="line">-=</span><br><span class="line">*=</span><br><span class="line">/=</span><br><span class="line">%=</span><br></pre></td></tr></table></figure>
+<p>字符串可以通过 + 号拼接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = 5 + 5;</span><br><span class="line">var a = &apos;5&apos; + &apos;5&apos;;</span><br><span class="line">var a = 5 + &apos;5&apos;;</span><br></pre></td></tr></table></figure>
+<p>比较运算符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">==</span><br><span class="line">=== （全等，数据类型和值都必须完全相同）</span><br><span class="line">!=</span><br><span class="line">&gt;</span><br><span class="line">&lt;</span><br><span class="line">&gt;=</span><br><span class="line">&lt;=</span><br></pre></td></tr></table></figure>
+<p>逻辑运算符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&amp;&amp;</span><br><span class="line">||</span><br><span class="line">!</span><br></pre></td></tr></table></figure>
+<p>条件运算符（三位运算符）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var value = (name == &apos;瞬间移动帅不帅？&apos;) ？ &quot;帅&quot; : &quot;不帅&quot;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="if"><a href="#if" class="headerlink" title="if"></a>if</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if () &#123;</span><br><span class="line"></span><br><span class="line">&#125; else if () &#123;</span><br><span class="line"></span><br><span class="line">&#125; else &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a>Switch</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">switch(n)</span><br><span class="line">&#123;</span><br><span class="line">case 1:</span><br><span class="line">  执行代码块 1</span><br><span class="line">  break;</span><br><span class="line">case 2:</span><br><span class="line">  执行代码块 2</span><br><span class="line">  break;</span><br><span class="line">default:</span><br><span class="line">  n 与 case 1 和 case 2 不同时执行的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while (条件)</span><br><span class="line">  &#123;</span><br><span class="line">  需要执行的代码</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="break-continue"><a href="#break-continue" class="headerlink" title="break/continue"></a>break/continue</h3><p>break：跳出全部循环<br>continue：跳出单个循环<br>return：跳出当前方法</p>
+<p>到此，已经已经学会了 JavaScript 与法，我们可以不利用 document 的方法捕捉 html 元素，我们要用 jQuery 的方式 去完成上文提到的 <strong>重中之重</strong> 的规划</p>
+<h2 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h2><p>jQuery是一个JavaScript函数库。<br>jQuery是一个轻量级的”写的少，做的多”的JavaScript库。</p>
+<h3 id="重中之重-1"><a href="#重中之重-1" class="headerlink" title="重中之重"></a>重中之重</h3><ol>
+<li>事件响应</li>
+<li>捕捉 html 元素</li>
+<li>逐层捕捉 html </li>
+<li>改变/插入 html 元素</li>
+<li>网络请求（Ajax）</li>
+</ol>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><a href="http://jquery.com/download/" target="_blank" rel="noopener">点这里</a> 下载 jquery，在本地进行进入，也可以直接下载进行引入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;title&gt;jQuery Demo&lt;/title&gt;</span><br><span class="line">	&lt;script src=&quot;https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;!-- &lt;script src=&quot;jquery-1.10.2.min.js&quot;&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
     </div>
   </div>
